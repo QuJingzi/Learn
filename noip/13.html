@@ -15,7 +15,7 @@
 		
 		
 		<script>
-			var app = angular.module("myNoteApp", []);
+			var app = angular.module("myApp",[]);
 			app.controller("myCtrl", function($scope,$http,$log) {
 			
 			<!--
@@ -24,7 +24,7 @@
             $scope.loadAnswers = function() {
             	var ans={};
 				$http({
-				  method:'GET'
+				  method:'GET',
 				  url:'../assets/data/13.json'
 				})
 				.then(
