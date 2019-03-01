@@ -2,8 +2,56 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>13th paper</title>
 	</head>
-	<body>
+	<body ng-app="myApp" ng-controller="myCtrl>
+		
+		
+		
+		<!-- 引入angularjs -->
+		<script src="../assets/angular/1.6.9/angular.min.js"></script>	
+		
+		
+		
+		
+		<script>
+			var app = angular.module("myNoteApp", []);
+			app.controller("myCtrl", function($scope,$http,$log) {
+			
+			<!--
+					$http函数的形参就是一个配置对象
+            -->
+            $scope.loadAnswers = function() {
+            	var ans={};
+				$http({
+				  method:'GET'
+				  url:'../assets/data/13.json'
+				})
+				.then(
+					function successCallback(resp){
+						ans=resp.data;
+						$log.info(ans);
+					},
+					function errorCallback(resp){
+						$log.info('error!!!');
+					}
+				)
+           	
+        
+            	
+            }
+
+
+
+
+
+
+
+
+
+
+			});		
+		</script>
+		
 	</body>
 </html>
